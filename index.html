@@ -9,9 +9,17 @@
 <body>
     <script>
         function getComputerChoice() {
-            let randomFloor=Math.floor(Math.random()*100);
-            return randomFloor;
+             randomNumber=((Math.random()*100)+1);
+             console.log(`This determines what the computer selects: ${randomNumber}`)
+            if (randomNumber<33.333) {
+                return "Rock"
+            }
+            else if (randomNumber>=33.333 && randomNumber<66.666) {
+                return "Paper"
+            }
+            else return "Scissors"
         }
+        console.log(getComputerChoice());
     </script>
 <h1>Rock, Paper, Scissors</h1>
 <div class="bar"></div>
