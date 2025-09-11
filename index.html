@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
@@ -8,81 +9,92 @@
 
 <body>
     <script>
-        let humanScore=0;
-        let computerScore=0;
-        const computerSelection=getComputerChoice();
+        const computerSelection = getComputerChoice();
         console.log(`Computer: ${computerSelection}.`);
-        const humanSelection=getHumanChoice();
+        const humanSelection = getHumanChoice();
         console.log(`Player: ${humanSelection}.`);
-       
+
         function getComputerChoice() {
-             randomNumber=((Math.random()*100));
-             console.log(`This determines what the computer selects: ${randomNumber}`)
-            if (randomNumber<33.333) {
-                computerChoice="Rock";
+            randomNumber = ((Math.random() * 100));
+            console.log(`This determines what the computer selects: ${randomNumber}`)
+            if (randomNumber < 33.333) {
+                computerChoice = "Rock";
             }
-            else if (randomNumber>=33.333 && randomNumber<66.666) {
-                computerChoice="Paper";
+            else if (randomNumber >= 33.333 && randomNumber < 66.666) {
+                computerChoice = "Paper";
             }
-            else {computerChoice="Scissors";}
+            else { computerChoice = "Scissors"; }
             return computerChoice;
         }
 
-            function getHumanChoice() {
-            playerinput=window.prompt('Please type "Rock","Paper", or "Scissors".');
-                if (playerinput.toLowerCase()==="rock") {
-                humanChoice="Rock";
-                }
-                else if (playerinput.toLowerCase()==="paper") {
-                humanChoice="Paper";
-                }
-                else if (playerinput.toLowerCase()==="scissors") {
-                humanChoice="Scissors";
-                }
+        function getHumanChoice() {
+            playerinput = window.prompt('Please type "Rock","Paper", or "Scissors".');
+            if (playerinput.toLowerCase() === "rock") {
+                humanChoice = "Rock";
+            }
+            else if (playerinput.toLowerCase() === "paper") {
+                humanChoice = "Paper";
+            }
+            else if (playerinput.toLowerCase() === "scissors") {
+                humanChoice = "Scissors";
+            }
             return humanChoice;
-            }
-            
-            function playRound(humanChoice, computerChoice) {
-                let playerwin=(`${humanChoice} beats ${computerChoice}. You win!`);
-                let compwin=(`${computerChoice} beats ${humanChoice}. You lost!`)
-                let tie=(`${humanChoice} and ${computerChoice}. You tied!`)
+        }
 
-                if ((humanChoice=="Rock" && computerChoice=="Scissors") || (humanChoice=="Paper" && computerChoice=="Rock") || (humanChoice=="Scissors" && computerChoice=="Paper")) {
-                    return playerwin;
+        function playGame() {
+            let humanScore = 0;
+            let computerScore = 0;
+
+                function playRound(humanSelection, computerSelection) {
+                    let playerwin = (`${humanChoice} beats ${computerChoice}. You win!`);
+                    let compwin = (`${computerChoice} beats ${humanChoice}. You lost!`)
+                    let tie = (`${humanChoice} and ${computerChoice}. You tied!`)
+
+                    if ((humanChoice == "Rock" && computerChoice == "Scissors") || (humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Scissors" && computerChoice == "Paper")) {
+                        return console.log(playerwin)
+                    }
+                    else if (humanChoice == computerChoice) {
+                        return console.log(tie)
+                    }
+                    else {
+                        return console.log(compwin);
+                    }
                 }
-                else if (humanChoice==computerChoice) {
-                    return tie
-                }
-                else {
-                    return compwin;
-                };
+                playRound()
             }
-            console.log(playRound(humanChoice, computerChoice))
-            
-            
-            console.log(`Your points: ${humanScore} | Computer points: ${computerScore}`)
-            
+
+            playGame()
+
+
+        // console.log(`Your points: ${humanScore} | Computer points: ${computerScore}`)
     </script>
-<h1>Rock, Paper, Scissors</h1>
-<div class="bar"></div>
-<div class="main">
-<div class="main-top">
-<h2>Instructions</h2>
-    <ul>
-        <li><p>1. Enter "Rock", "Paper", or "Scissors" when prompted.</p></li>
-        <li><p>2. Press CTRL + Shift + I to see selections and results</p></li>
-        <li><p>3. Repeat for five rounds!</p></li>
-    </ul>
-</div>
-    <div class="imgbox">
-    <img src=".\rock-svgrepo-com.svg" alt="A two-toned graphic of a rock">
-    <img src=".\paper-plane-svgrepo-com.svg" alt="A graphic of a paper plane">
-    <img src=".\scissors-svgrepo-com.svg" alt="A graphic of teal scissors.">
-    <!-- svgrepo.com -->
+    <h1>Rock, Paper, Scissors</h1>
+    <div class="bar"></div>
+    <div class="main">
+        <div class="main-top">
+            <h2>Instructions</h2>
+            <ul>
+                <li>
+                    <p>1. Enter "Rock", "Paper", or "Scissors" when prompted.</p>
+                </li>
+                <li>
+                    <p>2. Press CTRL + Shift + I to see selections and results</p>
+                </li>
+                <li>
+                    <p>3. Repeat for five rounds!</p>
+                </li>
+            </ul>
+        </div>
+        <div class="imgbox">
+            <img src=".\rock-svgrepo-com.svg" alt="A two-toned graphic of a rock">
+            <img src=".\paper-plane-svgrepo-com.svg" alt="A graphic of a paper plane">
+            <img src=".\scissors-svgrepo-com.svg" alt="A graphic of teal scissors.">
+            <!-- svgrepo.com -->
+        </div>
     </div>
-</div>
-<div class="bar"></div>
+    <div class="bar"></div>
 </body>
 <footer>
 </footer>
+
 </html>
