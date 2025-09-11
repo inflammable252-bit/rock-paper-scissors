@@ -8,50 +8,72 @@
 
 <body>
     <script>
-        humanScore=0;
-        computerScore=0;
-
-        // function playRound(humanChoice, computerChoice) {
-
-        // }
-
+        let humanScore=0;
+        let computerScore=0;
+        const computerSelection=getComputerChoice();
+        console.log(`Computer: ${computerSelection}.`);
+        const humanSelection=getHumanChoice();
+        console.log(`Player: ${humanSelection}.`);
+       
         function getComputerChoice() {
-             randomNumber=((Math.random()*100)+1);
+             randomNumber=((Math.random()*100));
              console.log(`This determines what the computer selects: ${randomNumber}`)
             if (randomNumber<33.333) {
-                return "Rock"
+                computerChoice="Rock";
             }
             else if (randomNumber>=33.333 && randomNumber<66.666) {
-                return "Paper"
+                computerChoice="Paper";
             }
-            else return "Scissors"
+            else {computerChoice="Scissors";}
+            return computerChoice;
         }
-        console.log(getComputerChoice());
 
-        function getHumanChoice() {
+            function getHumanChoice() {
             playerinput=window.prompt('Please type "Rock","Paper", or "Scissors".');
-            if (playerinput.toLowerCase()==="rock") {
-                return "Rock"
-             }
-            else if (playerinput.toLowerCase()==="paper") {
-                return "Paper"
-             }
-            else if (playerinput.toLowerCase()==="scissors") {
-                return "Scissors"
-             }
+                if (playerinput.toLowerCase()==="rock") {
+                humanChoice="Rock";
+                }
+                else if (playerinput.toLowerCase()==="paper") {
+                humanChoice="Paper";
+                }
+                else if (playerinput.toLowerCase()==="scissors") {
+                humanChoice="Scissors";
+                }
+            return humanChoice;
             }
-        console.log(getHumanChoice());
+            
+            function playRound(humanChoice, computerChoice) {
+                let playerwin=(`${humanChoice} beats ${computerChoice}. You win!`);
+                let compwin=(`${computerChoice} beats ${humanChoice}. You lost!`)
+                let tie=(`${humanChoice} and ${computerChoice}. You tied!`)
+
+                if ((humanChoice=="Rock" && computerChoice=="Scissors") || (humanChoice=="Paper" && computerChoice=="Rock") || (humanChoice=="Scissors" && computerChoice=="Paper")) {
+                    return playerwin;
+                }
+                else if (humanChoice==computerChoice) {
+                    return tie
+                }
+                else {
+                    return compwin;
+                };
+            }
+            console.log(playRound(humanChoice, computerChoice))
+            
+            
+            console.log(`Your points: ${humanScore} | Computer points: ${computerScore}`)
+            
     </script>
 <h1>Rock, Paper, Scissors</h1>
 <div class="bar"></div>
 <div class="main">
-<h2>Body</h2>
+<div class="main-top">
+<h2>Instructions</h2>
     <ul>
-        <li><p></p></li>
-        <li><p></p></li>
-        <li><p></p></li>
-        <li><p></p></li>
+        <li><p>1. Enter "Rock", "Paper", or "Scissors" when prompted.</p></li>
+        <li><p>2. Press CTRL + Shift + I to see selections and results</p></li>
+        <li><p>3. Repeat for five rounds!</p></li>
     </ul>
+</div>
     <div class="imgbox">
     <img src=".\rock-svgrepo-com.svg" alt="A two-toned graphic of a rock">
     <img src=".\paper-plane-svgrepo-com.svg" alt="A graphic of a paper plane">

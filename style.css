@@ -3,6 +3,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    display: flex;
    flex-direction: column;
+   box-sizing: border-box;
 }
 
 h1, h2 {
@@ -23,6 +24,8 @@ div.main {
 }
 ul{
     list-style: none;
+    margin: 0px;
+    justify-self: flex-start;
 }
 
 
