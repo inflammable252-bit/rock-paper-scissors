@@ -11,6 +11,10 @@
         humanScore=0;
         computerScore=0;
 
+        // function playRound(humanChoice, computerChoice) {
+
+        // }
+
         function getComputerChoice() {
              randomNumber=((Math.random()*100)+1);
              console.log(`This determines what the computer selects: ${randomNumber}`)
@@ -26,19 +30,17 @@
 
         function getHumanChoice() {
             playerinput=window.prompt('Please type "Rock","Paper", or "Scissors".');
-            return playerinput;
-            console.log(playerinput)
-            if (playerinput="Rock" || "rock") {
+            if (playerinput.toLowerCase()==="rock") {
                 return "Rock"
              }
-            else if (playerinput="Paper" || "paper") {
+            else if (playerinput.toLowerCase()==="paper") {
                 return "Paper"
              }
-            else if (playerinput="Scissors" || "scissors") {
+            else if (playerinput.toLowerCase()==="scissors") {
                 return "Scissors"
              }
             }
-        console.log(getHumanChoice())
+        console.log(getHumanChoice());
     </script>
 <h1>Rock, Paper, Scissors</h1>
 <div class="bar"></div>
