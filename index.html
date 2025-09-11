@@ -9,11 +9,16 @@
 
 <body>
     <script>
-        const computerSelection = getComputerChoice();
-        console.log(`Computer: ${computerSelection}.`);
-        const humanSelection = getHumanChoice();
-        console.log(`Player: ${humanSelection}.`);
 
+        for (i=0; i<5; i++) {
+            playGame()}
+
+        function playGame() {
+        const computerSelection = getComputerChoice();
+        console.log(`   Computer: ${computerSelection}.`);
+        const humanSelection = getHumanChoice();
+        console.log(`   Player: ${humanSelection}.`);
+        
         function getComputerChoice() {
             randomNumber = ((Math.random() * 100));
             console.log(`This determines what the computer selects: ${randomNumber}`)
@@ -41,14 +46,13 @@
             return humanChoice;
         }
 
-        function playGame() {
-            let humanScore = 0;
-            let computerScore = 0;
-
                 function playRound(humanSelection, computerSelection) {
-                    let playerwin = (`${humanChoice} beats ${computerChoice}. You win!`);
-                    let compwin = (`${computerChoice} beats ${humanChoice}. You lost!`)
-                    let tie = (`${humanChoice} and ${computerChoice}. You tied!`)
+                    let humanScore = 0;
+                    let computerScore = 0;
+
+                    let playerwin = (`**${humanChoice} beats ${computerChoice}. You win!**`);
+                    let compwin = (`**${computerChoice} beats ${humanChoice}. You lost!**`)
+                    let tie = (`**${humanChoice} and ${computerChoice}. You tied!**`)
 
                     if ((humanChoice == "Rock" && computerChoice == "Scissors") || (humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Scissors" && computerChoice == "Paper")) {
                         return console.log(playerwin)
@@ -57,16 +61,17 @@
                         return console.log(tie)
                     }
                     else {
-                        return console.log(compwin);
+                        return console.log(compwin)
                     }
+                    // console.log(`Your points: ${humanScore} | Computer points: ${computerScore}`)
                 }
                 playRound()
-            }
 
-            playGame()
+            
+        }
 
 
-        // console.log(`Your points: ${humanScore} | Computer points: ${computerScore}`)
+        
     </script>
     <h1>Rock, Paper, Scissors</h1>
     <div class="bar"></div>
