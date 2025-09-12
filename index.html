@@ -55,17 +55,17 @@
                     let tie = (`**${humanChoice} and ${computerChoice}. You tied!**`)
 
                     if ((humanChoice == "Rock" && computerChoice == "Scissors") || (humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Scissors" && computerChoice == "Paper")) {
-                        return console.log(playerwin)
+                        return playerwin
                     }
                     else if (humanChoice == computerChoice) {
-                        return console.log(tie)
+                        return tie
                     }
                     else {
-                        return console.log(compwin)
+                        return compwin
                     }
                     // console.log(`Your points: ${humanScore} | Computer points: ${computerScore}`)
                 }
-                playRound()
+                console.log(playRound())
 
             
         }
