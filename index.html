@@ -13,15 +13,13 @@
         let computerScore = 0;
 
         for (i=0; i<5; i++) {
-        
             playGame()}
-
+        
         function playGame() {
         const computerSelection = getComputerChoice();
         console.log(`   Computer: ${computerSelection}.`);
         const humanSelection = getHumanChoice();
         console.log(`   Player: ${humanSelection}.`);
-        
         
         function getComputerChoice() {
             randomNumber = ((Math.random() * 100));
@@ -66,17 +64,10 @@
                 computerScore++;
                 return compwin
             }
-
         }
-
         console.log(playRound())
         console.log(`Your points: ${humanScore} | Computer points: ${computerScore}`)
-
- 
         }
-
-
-        
     </script>
     <h1>Rock, Paper, Scissors</h1>
     <div class="bar"></div>
@@ -91,7 +82,7 @@
                     <p>2. Repeat for five rounds!</p>
                 </li>
                 <li>
-                    <p>3. Press CTRL + Shift + I to see selections and results.</p>
+                    <p>3. Press CTRL + Shift + K (Firefox) or CTRL + Shift + J to see selections and results in the console.</p>
                 </li>
             </ul>
         </div>
