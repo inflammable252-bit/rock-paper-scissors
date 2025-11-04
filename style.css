@@ -7,7 +7,12 @@ body {
 }
 
 h1, h2 {
-    padding: 0px 20px 0px 20px;
+    padding: 10px 40px 10px 40px;
+}
+
+h1 {
+    font-size: 55px;
+    text-align: center;
 }
 
 div.bar {
@@ -17,26 +22,43 @@ div.bar {
 }
 
 div.main {
+    margin: 45px 15px;
     display:flex;
-    flex:auto;
+    flex: auto;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 }
 ul{
     list-style: none;
     margin: 0px;
+    font-size: 18px;
     justify-self: flex-start;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.select {
+    margin: 25px 0px;
+    text-align: center;
+    height: 2.7em;
+    width: 8em;
+    background-color:rgb(255, 233, 205);
+    border-radius: 8px;
+    border-color:rgba(250, 235, 215, 0.486);
+}
 
 .imgbox {
     padding: 50px;
     display: flex;
     flex: 0;
-    justify-content: space-evenly;
 }
 img {
-    height: 200px;
+    height: 150px;
     padding: 0px 50px 0px 50px;
 
 }
