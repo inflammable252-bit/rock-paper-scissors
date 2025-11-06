@@ -6,33 +6,38 @@ body {
    box-sizing: border-box;
 }
 
-h1, h2 {
-    padding: 10px 40px 10px 40px;
-}
-
 h1 {
     font-size: 55px;
     text-align: center;
 }
+h2, #scoredisplay {
+    padding: 0px 25px;
+}
+
+h3 {
+    margin: 0px;
+}
 
 div.bar {
     background-color: teal;
-    height: 25px;
+    min-height: 40px;
     padding: 0px;
 }
 
 div.main {
-    margin: 45px 15px;
+    padding: 40px 40px 40px 0px;
     display:flex;
-    flex: auto;
-    flex-direction: column;
-    align-items: center;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
 }
-ul{
-    list-style: none;
-    margin: 0px;
-    font-size: 18px;
-    justify-self: flex-start;
+
+div.main-body {
+    margin-right: 50px;
+}
+
+div.main-top {
+    align-items: center;
 }
 
 .wrapper {
@@ -45,22 +50,52 @@ ul{
 .select {
     margin: 25px 0px;
     text-align: center;
-    height: 2.7em;
-    width: 8em;
+    height: 3em;
+    width: 9em;
     background-color:rgb(255, 233, 205);
     border-radius: 8px;
     border-color:rgba(250, 235, 215, 0.486);
+    font-weight: 600;
+    font-size: 1em;
 }
 
 .imgbox {
-    padding: 50px;
+    padding: 30px 10px;
     display: flex;
     flex: 0;
 }
 img {
-    height: 150px;
-    padding: 0px 50px 0px 50px;
+    height: 175px;
+    padding: 15px 35px;
+}
 
+div.sidebar {
+    padding: 10px 40px 0px 40px;
+    min-width: 175px;
+    display: flex;
+    flex-direction: column;
+    background-color:floralwhite;
+    border-radius: 18px;
+    
+}
+
+ol {
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+ol > p {
+    margin-left: -15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+ol > #win {
+    color:lightseagreen;
+}
+
+ol > #loss {
+    color: lightslategrey;
 }
 
 footer {
