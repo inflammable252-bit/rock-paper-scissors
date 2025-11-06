@@ -95,9 +95,6 @@
             
             if ((humanChoice == "Rock" && computerChoice == "Scissors") || (humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Scissors" && computerChoice == "Paper")) {
                 humanScore++;
-                if (humanScore == 5) {
-                    return playerwin;
-                }
                 return playerwin;
             }
             else if (humanChoice == computerChoice) {
@@ -105,9 +102,6 @@
             }
             else {
                 computerScore++;
-                if (computerScore == 5) {
-                    return compwin;
-                }
                 return compwin
             }
 
